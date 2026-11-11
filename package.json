@@ -1,0 +1,85 @@
+{
+	"name": "pi-agent-diary",
+	"version": "0.3.0",
+	"description": "Coding agents keep a per-project diary (.ad/) of what they did and why, so every new session starts with project memory — at a fixed, bounded context cost. pi extension + skill + CLI for Claude Code.",
+	"author": "seunghwan.byun <senghan1992@gmail.com>",
+	"type": "module",
+	"license": "MIT",
+	"keywords": [
+		"pi-package",
+		"pi-extension",
+		"pi",
+		"claude-code",
+		"coding-agent",
+		"agent-memory",
+		"llm-wiki",
+		"devlog",
+		"context-engineering"
+	],
+	"bin": {
+		"ad": "./bin/ad.js"
+	},
+	"exports": {
+		".": {
+			"types": "./dist/core/index.d.ts",
+			"import": "./dist/core/index.js"
+		},
+		"./package.json": "./package.json"
+	},
+	"pi": {
+		"extensions": [
+			"./src/pi/extension.ts"
+		],
+		"skills": [
+			"./skills"
+		]
+	},
+	"files": [
+		"bin",
+		"dist",
+		"src",
+		"skills",
+		"integrations",
+		"docs",
+		"README.md",
+		"README.ko.md",
+		"CHANGELOG.md",
+		"LICENSE"
+	],
+	"engines": {
+		"node": ">=22.18"
+	},
+	"scripts": {
+		"build": "rm -rf dist && tsc -p tsconfig.build.json",
+		"typecheck": "tsc --noEmit",
+		"test": "node --test test/*.test.ts",
+		"check": "npm run typecheck && npm test",
+		"prepublishOnly": "npm run check && npm run build"
+	},
+	"peerDependencies": {
+		"@earendil-works/pi-coding-agent": "*",
+		"typebox": "*"
+	},
+	"peerDependenciesMeta": {
+		"@earendil-works/pi-coding-agent": {
+			"optional": true
+		},
+		"typebox": {
+			"optional": true
+		}
+	},
+	"devDependencies": {
+		"@earendil-works/pi-coding-agent": "1.5.0",
+		"@types/node": "^24.0.0",
+		"typebox": "*",
+		"typescript": "^5.9.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/senghan1992/pi-agent-diary.git"
+	},
+	"homepage": "https://github.com/senghan1992/pi-agent-diary#readme",
+	"bugs": {
+		"url": "https://github.com/senghan1992/pi-agent-diary/issues"
+	}
+}

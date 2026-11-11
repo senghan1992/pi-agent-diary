@@ -1,0 +1,3 @@
+# agent-diary: append-only files merge by keeping both sides' lines
+decisions.md merge=union
+journal/**/*.md merge=union

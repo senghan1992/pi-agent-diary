@@ -1,0 +1,4 @@
+# agent-diary: machine-local state and generated files
+.local/
+index.md
+*.tmp

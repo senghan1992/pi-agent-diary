@@ -1,0 +1,13 @@
+{
+	"budgets": {
+		"project": 1200,
+		"status": 600,
+		"digest": 1000,
+		"context": 3000
+	},
+	"recentDays": 7,
+	"recentDecisions": 8,
+	"hotDays": 30,
+	"autoWrite": "auto",
+	"nudgeAfterMutations": 6
+}
